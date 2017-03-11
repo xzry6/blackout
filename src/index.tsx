@@ -2,8 +2,10 @@ import * as React from 'react';
 import {render} from 'react-dom';
 import {hashHistory, IndexRoute, Link, Route, Router} from 'react-router';
 
-import Hello from './components/hello/Hello';
 import App from './components/app/App';
+import Hello from './components/hello/Hello';
+import Session from './models/Session';
+import SessionStore from './stores/SessionStore';
 
 
 const Home = React.createClass({
@@ -21,11 +23,14 @@ const Home = React.createClass({
   }
 });
 
+var sampleSessions: Session[] = [new Session(1), new Session(2)];
+const sampleSessionStore = new SessionStore(sampleSessions);
+
 render((
   <Router history={hashHistory}>
     <Route path="/" component={Home}>
       <Route path="hello" component={Hello} />
-      <Route path="app" component={App} />
+      <Route path="app" component={() => (<App sessionStore = {sampleSessionStore}/ >)} />
     </Route>
   </Router>
-), document.body)
+), document.getElementById('example'))
