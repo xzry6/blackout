@@ -33,4 +33,4 @@ render((
       <Route path="app" component={() => (<App sessionStore = {sampleSessionStore}/ >)} />
     </Route>
   </Router>
-), document.getElementById('example'))
+), document.getElementById('example'));
