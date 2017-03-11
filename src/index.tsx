@@ -26,6 +26,7 @@ const Home = React.createClass({
 var sampleSessions: Session[] = [new Session(1), new Session(2)];
 const sampleSessionStore = new SessionStore(sampleSessions);
 
+// Router.
 render((
   <Router history={hashHistory}>
     <Route path="/" component={Home}>

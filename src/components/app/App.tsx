@@ -9,16 +9,19 @@ import SessionView from './SessionView';
 @observer
 // TODO: (xzry6) change class name
 class App extends React.Component<{sessionStore: SessionStore}, undefined> {
+  activeSessionId?: number;
+
   render() {
     const sessions: Session[] = this.props.sessionStore.sessions;
     const sessionViews: JSX.Element[] = sessions.map((session: Session) =>
-      <SessionView key={session.id} session={session} />
+      <SessionView
+        key={session.id}
+        session={session}
+        isActive={this.activeSessionId && session.id == this.activeSessionId}
+      />
     );
 
-    if(sessions.length == 0) {
-      return null;
-    }
-    return <ul>{sessionViews}</ul>;
+    return sessions.length == 0 ? null : <ul>{sessionViews}</ul>;
   }
 }
 
