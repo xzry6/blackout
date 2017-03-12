@@ -6,12 +6,11 @@ import SessionStore from 'stores/SessionStore';
 import SessionView from './session/SessionView';
 
 
-interface AppProps { sessionStore: SessionStore; }
-interface AppState { activeSessionId?: number; }
+interface HistoryProps { sessionStore: SessionStore; }
+interface HistoryState { activeSessionId?: number; }
 
 @observer
-// TODO: (xzry6) change class name
-class App extends React.Component<AppProps, AppState> {
+class HistoryView extends React.Component<HistoryProps, HistoryState> {
 
   constructor() {
     super();
@@ -43,4 +42,4 @@ class App extends React.Component<AppProps, AppState> {
   }
 }
 
-export default App;
+export default HistoryView;
