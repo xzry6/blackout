@@ -6,8 +6,8 @@ import SessionStore from '../../stores/SessionStore';
 import SessionView from './SessionView';
 
 
-interface AppProps { sessionStore: SessionStore }
-interface AppState { activeSessionId: number }
+interface AppProps { sessionStore: SessionStore; }
+interface AppState { activeSessionId?: number; }
 
 @observer
 // TODO: (xzry6) change class name
@@ -15,22 +15,23 @@ class App extends React.Component<AppProps, AppState> {
 
   constructor() {
     super();
-    this.state = {activeSessionId: undefined};
+    this.state = { activeSessionId: undefined };
     // NOTE: this binding is necessary to make `this` work in the callback.
     this.handleClickOnSession = this.handleClickOnSession.bind(this);
   }
 
   render() {
     const sessions: Session[] = this.props.sessionStore.sessions;
+    // NOTE: keys attribute help React identify which items have changed.
     const sessionViews: JSX.Element[] = sessions.map((session: Session) =>
       <SessionView
-        onClick={this.handleClickOnSession}
-        key={session.id}
-        session={session}
         isActive={
           this.state.activeSessionId &&
           this.state.activeSessionId == session.id
         }
+        key={session.id}
+        onClick={this.handleClickOnSession}
+        session={session}
       />
     );
 
@@ -38,7 +39,7 @@ class App extends React.Component<AppProps, AppState> {
   }
 
   private handleClickOnSession(event: any) {
-    this.setState({activeSessionId: event.target.value})
+    this.setState({ activeSessionId: event.target.value });
   }
 }
 

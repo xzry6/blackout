@@ -7,18 +7,34 @@ import Session from '../../models/Session';
 
 
 interface SessionProps {
-  session: Session,
-  isActive: boolean,
-  onClick: (e: any) => void
+  isActive: boolean;
+  onClick: (e: any) => void;
+  session: Session;
 }
+interface SessionState { activeJobId?: number; }
 
 @observer
-class SessionView extends React.Component<SessionProps, undefined> {
+class SessionView extends React.Component<SessionProps, SessionState> {
+
+  constructor() {
+    super();
+    this.state = { activeJobId: undefined };
+    // NOTE: this binding is necessary to make `this` work in the callback.
+    this.handleClickOnJob = this.handleClickOnJob.bind(this);
+  }
 
   render() {
     const session: Session = this.props.session;
-    const jobViews: JSX.Element[] = session.jobs.map(
-      (job: Job) => <JobView key={job.id} job={job} />
+    const jobViews: JSX.Element[] = session.jobs.map((job: Job) =>
+      <JobView
+        isActive = {
+          this.state.activeJobId &&
+          this.state.activeJobId == job.id
+        }
+        job={job}
+        key={job.id}
+        onClick={this.handleClickOnJob}
+      />
     )
 
     // show only one active jobviews
@@ -27,6 +43,12 @@ class SessionView extends React.Component<SessionProps, undefined> {
         {!this.props.isActive ? null : <ul>{jobViews}</ul>}
       </li>
     );
+  }
+
+  private handleClickOnJob(event: any) {
+    // Note: stop propagation in nested 'onClick' events
+    event.stopPropagation();
+    this.setState({ activeJobId: event.target.value });
   }
 }
 
