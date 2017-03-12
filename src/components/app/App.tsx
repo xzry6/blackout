@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {observer} from 'mobx-react';
 
-import Session from '../../models/Session';
-import SessionStore from '../../stores/SessionStore';
-import SessionView from './SessionView';
+import Session from 'models/Session';
+import SessionStore from 'stores/SessionStore';
+import SessionView from './session/SessionView';
 
 
 interface AppProps { sessionStore: SessionStore; }

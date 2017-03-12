@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {observer} from 'mobx-react';
 
-import Job from '../../models/Job';
-import JobView from './JobView';
-import Session from '../../models/Session';
+import Job from 'models/Job';
+import JobView from './job/JobView';
+import Session from 'models/Session';
 
 
 interface SessionProps {

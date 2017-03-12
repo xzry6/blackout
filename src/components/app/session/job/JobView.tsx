@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {observer} from 'mobx-react';
 
-import Job from '../../models/Job';
+import Job from 'models/Job';
 
 
 interface JobProps {

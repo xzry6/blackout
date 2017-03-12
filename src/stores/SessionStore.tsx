@@ -1,6 +1,6 @@
 import {observable} from 'mobx';
 
-import Session from '../models/Session';
+import Session from 'models/Session';
 
 
 class SessionStore {

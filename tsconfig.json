@@ -1,6 +1,7 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "baseUrl": "./src/",
         "experimentalDecorators": true,
         "jsx": "react",
         "module": "commonjs",
