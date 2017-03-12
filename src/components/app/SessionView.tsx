@@ -8,24 +8,26 @@ import Session from '../../models/Session';
 
 interface SessionProps {
   session: Session,
-  isActive: boolean
+  isActive: boolean,
+  onClick: (e: any) => void
 }
 
 @observer
 class SessionView extends React.Component<SessionProps, undefined> {
 
-    render() {
-      const session: Session = this.props.session;
-      // TODO: (xzry6) add isActive logic here
-      let jobViews: JSX.Element[] = session.jobs.map((job: Job) =>
-        <JobView key={job.id} job={job} />)
+  render() {
+    const session: Session = this.props.session;
+    const jobViews: JSX.Element[] = session.jobs.map(
+      (job: Job) => <JobView key={job.id} job={job} />
+    )
 
-      return (
-        <li>{session.id}
-          <ul>{jobViews}</ul>
-        </li>
-      );
-    }
+    // show only one active jobviews
+    return (
+      <li onClick={this.props.onClick} value={session.id}>{session.id}
+        {!this.props.isActive ? null : <ul>{jobViews}</ul>}
+      </li>
+    );
+  }
 }
 
 export default SessionView;
