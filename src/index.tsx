@@ -2,7 +2,7 @@ import * as React from 'react';
 import {render} from 'react-dom';
 import {browserHistory, IndexRoute, Link, Route, Router} from 'react-router';
 
-import ComposeView from './components/compose/composeView';
+import ComposeView from './components/compose/ComposeView';
 import DocumentView from './components/document/DocumentView';
 import HistoryView from './components/history/HistoryView';
 import Hello from './components/hello/Hello';
