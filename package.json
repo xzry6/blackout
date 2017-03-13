@@ -11,8 +11,9 @@
     "mobx"
   ],
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "clean": "rm -rf node_modules build"
+    "build": "webpack",
+    "clean": "rm -rf node_modules build",
+    "start": "webpack-dev-server --open --content-base public/"
   },
   "dependencies": {
     "@types/react": "^15.0.12",

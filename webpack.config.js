@@ -4,7 +4,7 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, '/build'),
+        path: path.resolve(__dirname, 'build'),
         publicPath: '/dev/'
     },
     devtool: 'source-map',
@@ -22,10 +22,6 @@ module.exports = {
             loader: ['style-loader', 'css-loader']
           },
           {
-            test: /\.svg?$/,
-            loader: 'raw-loader'
-          },
-          {
             enforce: 'pre',
             test: /\.js$/,
             loader: "source-map-loader"
@@ -36,4 +32,7 @@ module.exports = {
         'react': 'React',
         'react-dom': 'ReactDOM'
     },
+    devServer: {
+        historyApiFallback: true
+    }
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {render} from 'react-dom';
-import {browserHistory, IndexRoute, Link, Route, Router} from 'react-router';
+import {hashHistory, IndexRoute, Link, Route, Router} from 'react-router';
 
 import ComposeView from './components/compose/ComposeView';
 import DocumentView from './components/document/DocumentView';
@@ -32,7 +32,7 @@ const sampleSessionStore = new SessionStore(sampleSessions);
 
 // Router.
 render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={Home}>
       <Route path="hello" component={Hello} />
       <Route path="compose" component={ComposeView} />
