@@ -3,7 +3,10 @@ logs
 *.log
 npm-debug.log*
 
-# build
+# Install
+public/scripts/
+
+# Build
 build/**
 
 # Dependency directories
