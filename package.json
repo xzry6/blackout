@@ -13,6 +13,7 @@
   "scripts": {
     "build": "webpack",
     "clean": "rm -rf node_modules build public/scripts",
+    "postbuild": "cp ./build/bundle.js ./public/scripts/",
     "postinstall": "mkdir -p ./public/scripts/; cp ./node_modules/react/dist/react.js ./node_modules/react-dom/dist/react-dom.js ./public/scripts/;",
     "start": "webpack-dev-server --open --content-base public/"
   },

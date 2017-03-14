@@ -22,6 +22,7 @@ blackout
 
 
 ## Usage
+- `npm install`: install all node packages;
 - `npm run build`: build `build/bundle.js` based on all `.tsx` files;
 - `npm run clean`: clean up all `node_modules` and `build`;
 - `npm start`: start a `webpack-dev-server`;
@@ -46,8 +47,7 @@ import Job from 'models/Job';
 To enable this feature, set `"compileOnSave": true` in `tsconfig.json`.
 #### Deployment
 1. `npm run build`;
-2. `cp build/bundle.js public/scripts/`;
-3. Change the following line in index.html:
+2. Change the following line in index.html:
 ```html
 <script src="./scripts/bundle.js" />
 ```
