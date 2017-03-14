@@ -29,7 +29,7 @@ class SessionView extends React.Component<SessionProps, SessionState> {
       <JobView
         isActive = {
           this.state.activeJobId &&
-          this.state.activeJobId == job.id
+          this.state.activeJobId === job.id
         }
         job={job}
         key={job.id}

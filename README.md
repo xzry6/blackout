@@ -16,6 +16,7 @@ blackout
     |_stores
   |_package.json(node package management file)
   |_tsconfig.json(typescript configuration file)
+  |_tslint.json(typescript linter configuration file)
   |_webpack.config.js(webpack and webpack-dev-server configuration file)
 ```
 

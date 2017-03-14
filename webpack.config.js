@@ -24,7 +24,12 @@ module.exports = {
           {
             enforce: 'pre',
             test: /\.js$/,
-            loader: "source-map-loader"
+            loader: 'source-map-loader'
+          },
+          {
+            enforce: 'pre',
+            test: /\.tsx$/,
+            loader: 'tslint-loader',
           }
         ]
     },

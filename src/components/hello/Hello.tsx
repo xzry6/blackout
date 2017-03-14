@@ -14,7 +14,7 @@ class Hello extends React.Component<HelloProps, undefined> {
     return (
       <div className='Hello'>
         <div className='Hello-header'>
-          <img src='./assets/logo.svg' className="Hello-logo" alt="logo" />
+          <img src='./assets/logo.svg' className='Hello-logo' alt='logo' />
           <h2>Hello from {this.props.compiler} Xiao and {this.props.framework}!</h2>
         </div>
         <p className='Hello-intro'>

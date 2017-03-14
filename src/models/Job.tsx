@@ -14,8 +14,8 @@ class Job {
 
   fetchStatusAndResult() {
     // TODO: (xzry6) make an http request and fetch job status and result here
-    this.status = "succeed";
-    this.result = "none";
+    this.status = 'succeed';
+    this.result = 'none';
   }
 
   // TODO: (xzry6) figure out how to update job status and result

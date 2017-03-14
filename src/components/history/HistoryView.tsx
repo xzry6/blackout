@@ -26,7 +26,7 @@ class HistoryView extends React.Component<HistoryProps, HistoryState> {
       <SessionView
         isActive={
           this.state.activeSessionId &&
-          this.state.activeSessionId == session.id
+          this.state.activeSessionId === session.id
         }
         key={session.id}
         onClick={this.handleClickOnSession}
@@ -34,7 +34,7 @@ class HistoryView extends React.Component<HistoryProps, HistoryState> {
       />
     );
 
-    return sessions.length == 0 ? null : <ul>{sessionViews}</ul>;
+    return sessions.length === 0 ? null : <ul>{sessionViews}</ul>;
   }
 
   private handleClickOnSession(event: any) {
